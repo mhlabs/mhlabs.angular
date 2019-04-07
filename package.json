@@ -22,6 +22,7 @@
     "format": "./node_modules/.bin/nx format:write",
     "format:write": "./node_modules/.bin/nx format:write",
     "format:check": "./node_modules/.bin/nx format:check",
+    "format:staged": "precise-commits",
     "update": "ng update @nrwl/schematics",
     "update:check": "ng update",
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
@@ -30,7 +31,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run format:staged"
     }
   },
   "commitlint": {
@@ -47,7 +49,8 @@
     "@types/node": "~8.9.4",
     "dotenv": "6.2.0",
     "husky": "^1.3.1",
-    "prettier": "1.15.2",
+    "precise-commits": "^1.0.2",
+    "prettier": "^1.15.2",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "3.2.2"
