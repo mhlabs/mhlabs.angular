@@ -7,5 +7,15 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "external-route": {
+      "tags": ["scope:external-route", "type:feature"]
+    },
+    "test-app": {
+      "tags": ["scope:test-app", "type:app"]
+    },
+    "test-app-e2e": {
+      "tags": []
+    }
+  }
 }
