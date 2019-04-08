@@ -8,9 +8,8 @@ describe('ExternalRedirectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExternalRedirectComponent ]
-    })
-    .compileComponents();
+      declarations: [ExternalRedirectComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

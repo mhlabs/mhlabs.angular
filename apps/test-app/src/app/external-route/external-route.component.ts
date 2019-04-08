@@ -5,10 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './external-route.component.html'
 })
 export class ExternalRouteComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
