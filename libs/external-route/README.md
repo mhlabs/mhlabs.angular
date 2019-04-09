@@ -1,10 +1,47 @@
 # ExternalRoute
 
+!! Documentation needs to be updated !!
+
 ## Getting started
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ExternalRouteModule } from '@mhlabs/external-route';
+import { AppComponent } from './app.component';
+import { ExternalRouteComponent } from './external-route/external-route.component';
+import { RouterModule, Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'google',
+    pathMatch: 'full',
+    redirectTo:
+      '/external-route?externalUrl=https://www.google.se&target=_blank'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes), ExternalRouteModule]
+})
+export class AppModule {}
+```
+
+### Configuration
 
 ## Usages
 
 When using the router you have the possibility to pass a externalUrl and target.
+
+Route to external url from module:
+
+```typescript
+ {
+    path: 'google',
+    pathMatch: 'full',
+    redirectTo: '/external-route?externalUrl=https://www.google.se'
+  }
+```
 
 ```typescript
 this.router.navigate([
