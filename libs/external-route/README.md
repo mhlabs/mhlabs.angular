@@ -30,6 +30,13 @@ export class AppModule {}
 
 When using the router you have the possibility to pass a externalUrl and target.
 
+```typescript
+this.router.navigate([
+  '/external-route',
+  { externalUrl: 'https://google.se', target: '_self' }
+]);
+```
+
 Route to external url from module:
 
 ```typescript
@@ -40,14 +47,7 @@ Route to external url from module:
   }
 ```
 
-```typescript
-this.router.navigate([
-  '/external-route',
-  { externalUrl: 'https://google.se', target: '_self' }
-]);
-```
-
-The directive is active when no routerLink attributes exist on you a tag:
+The directive is active when no routerLink attributes exist on you a tag and you have set the href attribute:
 
 ```html
 <a href="https://www.google.com/" target="_self" , rel="nofollow"
