@@ -13,7 +13,7 @@ export const routes: Routes = [
   {
     path: 'google',
     pathMatch: 'full',
-    redirectTo: '/external-route?externalUrl=https://www.google.se'
+    redirectTo: '/external-route?externalUrl=https://www.google.se&target=_self'
   }
 ];
 
