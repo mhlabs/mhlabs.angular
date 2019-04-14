@@ -3,7 +3,7 @@ import { ExternalRouteTarget } from './external-route-target.enum';
 import { ExternalRouteRelationship } from './external-route-relationship.enum';
 
 export const defaultConfig: ExternalRouteConfig = {
-  documentTarget: ExternalRouteTarget.blank,
+  documentTarget: ExternalRouteTarget.self,
   documentRelationship: ExternalRouteRelationship.external,
   urlParamKey: 'externalUrl',
   targetParamKey: 'target'

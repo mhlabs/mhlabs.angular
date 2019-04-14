@@ -4,7 +4,8 @@ import {
   HostListener,
   HostBinding,
   Input,
-  AfterViewInit
+  AfterViewInit,
+  ChangeDetectorRef
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { defaultConfig } from './default-config';
@@ -14,15 +15,19 @@ import { defaultConfig } from './default-config';
   selector: 'a:not([routerLink])'
 })
 export class ExternalUrlDirective implements AfterViewInit {
-  constructor(private elementRef: ElementRef, private router: Router) {}
+  constructor(
+    private elementRef: ElementRef,
+    private router: Router,
+    private changeDetector: ChangeDetectorRef
+  ) {}
 
   @HostBinding('rel')
   @Input()
-  rel;
+  rel: string;
 
   @HostBinding('target')
   @Input()
-  target;
+  target: string;
 
   @HostListener('click', ['$event'])
   clicked(event: Event) {
@@ -51,5 +56,6 @@ export class ExternalUrlDirective implements AfterViewInit {
   ngAfterViewInit(): void {
     this.rel = this.rel || defaultConfig.documentRelationship;
     this.target = this.target || defaultConfig.documentTarget;
+    this.changeDetector.detectChanges();
   }
 }

@@ -1,8 +1,19 @@
 # ExternalRoute
 
-!! Documentation needs to be updated !!
+
+Navigating to an external url from an Angular application using `
+window.location` or an anchor tag is straight forward, but it has a disadvantage, it bypasses the Angular Router.
+
+This means that if we have something like route guards, they will not be called. For example we might have a guard that notifies the user of any unsaved changes and can stop the navigation if the user wishes.
+
 
 ## Getting started
+
+
+`npm install @mhlabs/external-route --save` or `yarn add @mhlabs/external-route`
+
+### Setup using default values
+
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,13 +38,49 @@ export const routes: Routes = [
 export class AppModule {}
 ```
 
+
+### Configure module
+
+You also have the option to pass a optional configuration object using the `.forRoot()` method.
+
+```typescript
+import {
+  ExternalRouteModule,
+  ExternalRouteRelationship,
+  ExternalRouteTarget
+} from '@mhlabs/external-route';
+
+ExternalRouteModule.forRoot({
+      documentRelationship: ExternalRouteRelationship.external,
+      documentTarget: ExternalRouteTarget.blank,
+      targetParamKey: 'target',
+      urlParamKey: 'externalUrl'
+    })
+```
+
+
 ### Configuration
 
-## Usages
 
-When using the router you have the possibility to pass a externalUrl and target.
+| Option                 | Default     | Description                                                                                             |
+| ---------------------- | ----------- | ------------------------------------------------------------------------------------------------------- |
+| `documentRelationship` | external    | The rel attribute of the external link, [read more](https://www.w3schools.com/TAGS/att_a_rel.asp)       |
+| `documentTarget`       | _self       | The target attribute of the external link, [read more](https://www.w3schools.com/tags/att_a_target.asp) |
+| `targetParamKey`       | target      | the name of the query string parameter for target                                                       |
+| `urlParamKey`          | externalUrl | The name of the query string parameter for url/destination                                              |
 
-Route to external url from module:
+## Usage
+
+
+
+### Router
+
+
+
+When using the router you have the possibility to pass a `externalUrl` and `target` to the route `/external-route`.
+
+**Route to external url from module:**
+
 
 ```typescript
  {
@@ -50,10 +97,17 @@ this.router.navigate([
 ]);
 ```
 
-The directive is active when no routerLink attributes exist on you a tag:
+
+### Directive
+
+This library also includes a directive that will make all your anchor `<a>` tags use the `/external-route` path, if:
+
+- The anchor tag don't have the `routerLink` attribute.
+- The anchor tag has a `href` value.
+
 
 ```html
-<a href="https://www.google.com/" target="_self" , rel="nofollow"
-  >Go to google in same window</a
->
+
+<a href="https://www.google.com/" target="_self" rel="nofollow">Google</a>
+
 ```
