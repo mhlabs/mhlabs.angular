@@ -1,6 +1,22 @@
 {
   "name": "@mhlabs/external-route",
-  "version": "0.0.1",
+  "description": "Angular library that helps you work with external links",
+  "version": "1.0.0",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/mhlabs/mhlabs.angular/issues"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/mhlabs/mhlabs.angular"
+  },
+  "keywords": [
+    "Angular",
+    "external link",
+    "mhlabs"
+  ],
+  "readme": "https://github.com/mhlabs/mhlabs.angular/blob/master/libs/external-route/README.md",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/core": ">= 6.0.0",
     "@angular/common": ">= 6.0.0",
