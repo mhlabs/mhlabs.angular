@@ -1,18 +1,22 @@
 # ExternalRoute
 
 
+
 Navigating to an external url from an Angular application using `
 window.location` or an anchor tag is straight forward, but it has a disadvantage, it bypasses the Angular Router.
 
 This means that if we have something like route guards, they will not be called. For example we might have a guard that notifies the user of any unsaved changes and can stop the navigation if the user wishes.
 
 
+
 ## Getting started
+
 
 
 `npm install @mhlabs/external-route --save` or `yarn add @mhlabs/external-route`
 
 ### Setup using default values
+
 
 
 ```typescript
@@ -39,6 +43,7 @@ export class AppModule {}
 ```
 
 
+
 ### Configure module
 
 You also have the option to pass a optional configuration object using the `.forRoot()` method.
@@ -59,7 +64,9 @@ ExternalRouteModule.forRoot({
 ```
 
 
+
 ### Configuration
+
 
 
 | Option                 | Default     | Description                                                                                             |
@@ -82,6 +89,7 @@ When using the router you have the possibility to pass a `externalUrl` and `targ
 **Route to external url from module:**
 
 
+
 ```typescript
  {
     path: 'google',
@@ -98,6 +106,7 @@ this.router.navigate([
 ```
 
 
+
 ### Directive
 
 This library also includes a directive that will make all your anchor `<a>` tags use the `/external-route` path, if:
@@ -106,8 +115,11 @@ This library also includes a directive that will make all your anchor `<a>` tags
 - The anchor tag has a `href` value.
 
 
+
 ```html
 
+
 <a href="https://www.google.com/" target="_self" rel="nofollow">Google</a>
+
 
 ```
