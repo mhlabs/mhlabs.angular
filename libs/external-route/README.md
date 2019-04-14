@@ -48,9 +48,7 @@ import {
 ExternalRouteModule.forRoot({
       documentRelationship: ExternalRouteRelationship.external,
       documentTarget: ExternalRouteTarget.blank,
-
       targetParamKey: 'target',
-
       urlParamKey: 'externalUrl'
     })
 ```
