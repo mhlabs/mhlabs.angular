@@ -82,8 +82,10 @@ When using the router you have the possibility to pass a `externalUrl` and `targ
 
 ```typescript
 this.router.navigate([
+
   '/external-route',
   { externalUrl: 'https://google.se', target: '_self' }
+
 ]);
 ```
 
