@@ -1,0 +1,10 @@
+{
+  "name": "@mhlabs/external-route",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": ">= 6.0.0",
+    "@angular/common": ">= 6.0.0",
+    "@angular/router": ">= 6.0.0",
+    "rxjs": ">= 6.0.0"
+  }
+}
